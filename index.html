@@ -94,7 +94,18 @@
   nav.show {
     display: flex;
   }
+} /* Default nav visible */
+nav {
+  display: flex;
 }
+
+/* Mobile: only ApnaFix, no nav */
+@media (max-width: 768px) {
+  nav {
+    display: none 
+  }
+}
+
 
 
     /* Hero Section */
@@ -264,7 +275,6 @@
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
 </header>
 
 <!-- Floating Customer Support Button -->
