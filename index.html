@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- SEO Meta Tags -->
+    <title>ApnaFix - Plumber, Electrician, AC Repair & Home Services in India</title>
+    <meta name="description" content="ApnaFix provides expert handyman services including plumbing, electrician, AC repair, carpentry, painting, cleaning, appliance repair and more at your doorstep. Book online now!">
+    <meta name="keywords" content="handyman services, plumber near me, electrician near me, AC repair, home repair, carpentry, painting, cleaning, appliance repair, welding, IT support">
+  
+    <!-- Open Graph / Social Share -->
+    <meta property="og:title" content="ApnaFix - Trusted Handyman Services in India">
+    <meta property="og:description" content="Book plumbers, electricians, AC repair, carpenters & more. Trusted home services at your doorstep.">
+    <meta property="og:image" content="hero.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+  
+    <!-- Schema Markup for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "ApnaFix",
+      "image": "hero.jpg",
+      "@id": "https://yourwebsite.com",
+      "url": "https://yourwebsite.com",
+      "telephone": "+91-7451802466",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Your Street, Your Area",
+        "addressLocality": "Your City",
+        "addressRegion": "UP",
+        "postalCode": "250001",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/yourpage",
+        "https://www.instagram.com/yourpage"
+      ]
+    }
+    </script>
+  </head>
+  
+ 
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+    body {line-height:1.6;background:#f9f9f9;color:#333; ;
+        margin: 0;
+  padding: 0;
+  width: 100%;
+  
+    }
+
+    /* Navbar */
+    header {background:#007BFF;color:#fff;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;}
+    header h1 {font-size:24px;}
+    nav a {color:#fff;margin:0 10px;text-decoration:none;font-weight:bold;}
+    nav a:hover {text-decoration:underline;}
+
+    /* Hero Section */
+    .hero { 
+      height:90vh;
+      width: 100vw;
+      
+     
+
+      background:url('hero.jpg') center/cover no-repeat;
+      
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#ffffff;
+      background-color: #003d80;
+    }
+    .hero::after {
+      content:"";
+      position:absolute;
+      top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.7);
+
+    }
+    .hero-content {
+      position:relative;
+      z-index:1;
+    }
+    .hero-content h1 {font-size:48px;margin-bottom:15px;}
+    .hero-content h2 {font-size:20px;margin-bottom:20px;}
+    .btn {background:#0056b3;color:#fff;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;}
+    .btn:hover {background:#003d80;}
+
+    /* Sections */
+    section {padding:60px 20px;max-width:1200px;margin:auto;}
+    h2.section-title {text-align:center;font-size:32px;margin-bottom:20px;color:#0056b3;}
+
+    /* About */
+    .about {display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
+    .about img {width:45%;border-radius:10px;}
+    .about-text {flex:1;}
+    
+
+    /* Services */
+    .services {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .card {background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,0.1);text-align:center;transition:.3s;}
+    .card:hover {transform:translateY(-5px);}
+    .card h3 {color:#0056b3;margin-bottom:10px;}
+    .card button {margin-top:10px;}
+    .card img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.ad-video {
+  width: 80%;              /* responsive size */
+  max-width: 600px;        /* max width */
+  display: block;
+  margin: 40px auto;       /* center with space */
+  border-radius: 20px;     /* rounded corners */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);  /* soft shadow */
+  border: 3px solid #f39c12;  /* highlight border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ad-video:hover {
+  transform: scale(1.02);  /* slight zoom on hover */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+.success {
+      text-align: center;
+      color: green;
+      margin-top: 10px;
+    }
+
+    /* Why Choosing Us */
+    .why {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .why div {background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+
+    /* Past Projects */
+    .projects {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+    .projects img {width:50vh;height: 50vh; border-radius:10px; }
+
+    /* Reviews */
+    .reviews {overflow:hidden;position:relative;}
+    .review-track {display:flex;animation:scroll 20s linear infinite; text-align: center;}
+    .review {min-width:30%;min-height: 20%; margin:10px;background:#fff;padding:15px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+    @keyframes scroll {
+      from {transform:translateX(0);}
+      to {transform:translateX(-100%);}
+    }
+
+    /* Booking Modal */
+    .modal {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;}
+    .modal-content {background:#fff;padding:30px;border-radius:10px;width:90%;max-width:500px;}
+    .modal-content h2 {margin-bottom:15px;}
+    .modal-content input,.modal-content select {width:100%;padding:10px;margin:10px 0;border:1px solid #ccc;border-radius:5px;}
+    .close {float:right;font-size:24px;cursor:pointer;}
+
+    /* Footer */
+    footer {background:#0056b3;color:#fff;text-align:center;padding:20px;}
+    footer a {color:#fff;text-decoration:none;font-weight:bold;}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h1>ApnaFix</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+<!-- Floating Customer Support Button -->
+<a href="https://wa.me/917451802466" target="_blank" class="support-btn">
+    💬 Support
+  </a>
+  
+  <style>
+  .support-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366; /* WhatsApp green */
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 1000;
+  }
+  .support-btn:hover {
+    background: #1ebe5b;
+    transform: scale(1.05);
+  }
+  </style>
+  
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Reliable Home Services at Your Doorstep</h1>
+      <h2>Book trusted professionals for all your repair & maintenance needs.</h2>
+      <button class="btn" onclick="openBooking()">Book Now</button>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <div class="about">
+      <img src="about.jpg" alt="About Us">
+      <div class="about-text">
+        <p>"ApnaFix is India’s trusted handyman platform for home repair services. From plumbing and electrician work to AC repair, painting, welding and appliance repair, our trained professionals provide reliable and affordable solutions at your doorstep."</p>
+        <p>ApnaFix is your one-stop solution for home repair and maintenance services. We connect you with skilled professionals at affordable prices.</p>
+        <p>From plumbing to electrical work, we ensure top-notch service with safety and reliability.</p>
+        <p>Our mission is to make your life easier by providing hassle-free booking and guaranteed satisfaction.</p>
+        <p>We have served hundreds of happy customers and continue to grow with trust and quality service.</p>
+        <p>Choose ApnaFix and experience peace of mind for all your home service needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+      <div class="card">  <img src="plumber.png" alt="plumber" loading="lazy" > <h3>Plumbing</h3><p>Leak fixes & installations.</p><button class="btn" onclick="openBooking('Plumbing')">Book Now</button></div>
+      <div class="card">  <img src="electrician.png" alt="electrical" loading="lazy" > <h3>Electrician</h3><p>Wiring & repairs.</p><button class="btn" onclick="openBooking('Electrician')">Book Now</button></div>
+      <div class="card">  <img src="painter.png"  alt="painter loading="lazy" > <h3>Painting</h3><p>Wall & furniture painting.</p><button class="btn" onclick="openBooking('Painting')">Book Now</button></div>
+      <div class="card">  <img src="carpanter.png"  alt="carpanter" loading="lazy" > <h3>Carpentry</h3><p>Furniture making & repair.</p><button class="btn" onclick="openBooking('Carpentry')">Book Now</button></div>
+      <div class="card">  <img src="air-conditioner.png"  alt="ac repair" loading="lazy"> <h3>AC Repair</h3><p>Installation & servicing.</p><button class="btn" onclick="openBooking('AC Repair')">Book Now</button></div>
+      <div class="card">  <img src="fridge.png"  alt="appliance repair" loading="lazy"> <h3>Appliance Repair</h3><p>Fridge, washing machine etc.</p><button class="btn" onclick="openBooking('Appliance Repair')">Book Now</button></div>
+      <div class="card">  <img src="cleaning.png"  alt="cleaning" loading="lazy"> <h3>Cleaning</h3><p>Home & office deep cleaning.</p><button class="btn" onclick="openBooking('Cleaning')">Book Now</button></div>
+      <div class="card">  <img src="mechanical.png" alt="car repair" loading="lazy" > <h3>Mechanic</h3><p>Car & bike repair.</p><button class="btn" onclick="openBooking('Mechanic')">Book Now</button></div>
+      <div class="card">  <img src="welding.png" alt="welder" loading="lazy" > <h3>Welding</h3><p>Gate & grill welding.</p><button class="btn" onclick="openBooking('Welding')">Book Now</button></div>
+      <div class="card">  <img src="software-application.png" alt="computer repair" loading="lazy" > <h3>IT Support</h3><p>Computer & network help.</p><button class="btn" onclick="openBooking('IT Support')">Book Now</button></div>
+    </div>
+  </section>
+
+  <!-- Why Choosing Us -->
+  <section id="why">
+    <h2 class="section-title">Why Choose Us?</h2>
+    <div class="why">
+      <div><h3>Trusted Professionals</h3><p>Background verified & skilled experts.</p></div>
+      <div><h3>Affordable Prices</h3><p>Transparent pricing with no hidden charges.</p></div>
+      <div><h3>Quick Booking</h3><p>Book services in just a few clicks.</p></div>
+      <div><h3>24/7 Support</h3><p>We’re here to assist you anytime.</p></div>
+    </div>
+  </section>
+
+  <!-- Past Projects -->
+  <section id="projects">
+    <h2 class="section-title">Past Projects</h2>
+    <div class="projects">
+      <img src="renovation.png" alt="Project 1" loading="lazy">
+      <img src="Broken-kitchen-drain-pipe.webp" alt="Project 2" loading="lazy">
+      <img src="living-room-before-and-after.jpg" alt="Project 3" loading="lazy">
+      <img src="0f3153816a8eef21e3ada36644277810.jpg" alt="Project 4" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews">
+    
+    <h2 class="section-title">Customer Reviews</h2>
+    <h3 class="section-title">Rated 4.8/5 by 500+ Happy Customers</h3>
+    <div class="reviews">
+      <div class="review-track">
+        <div class="review">    ⭐⭐⭐⭐⭐   <br>" Great service! Highly recommend." <br>Ramesh </div>
+        <div class="review">    ⭐⭐⭐⭐⭐   <br>" Affordable and reliable." <br> Priya</div>
+        <div class="review">    ⭐⭐⭐⭐⭐   <br>" Electrician fixed everything quickly." <br> Aman</div>
+        <div class="review">    ⭐⭐⭐⭐⭐   <br>" Very professional plumber." <br> Kavita</div>
+        <div class="review">    ⭐⭐⭐⭐⭐   <br>" Good experience overall." <br> Sunil</div>
+        <div class="review">    ⭐⭐⭐⭐⭐   <br>" Quick booking and support." <br> Meena</div>
+      </div>
+    </div>
+  </section>
+
+  <video class="ad-video" autoplay loop controls>
+    <source src="video.mp4" type="video/mp4" loading="lazy">
+    Your browser does not support the video tag.
+  </video>
+  
+
+  <!-- Contact / Footer -->
+  <footer id="contact">
+    <p>© 2025 ApnaFix. All Rights Reserved.</p>
+    <p>Need help? Chat on WhatsApp</a></p>
+  </footer>
+
+ <!-- Booking Modal -->
+<div class="modal" id="bookingModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeBooking()">&times;</span>
+    <h2>Book a Service</h2>
+    <form id="bookingForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="number" placeholder="Phone Number" required>
+      <select id="serviceSelect" required>
+        <option value="">Select Service</option>
+        <option>Plumbing</option>
+        <option>Electrician</option>
+        <option>Painting</option>
+        <option>Carpentry</option>
+        <option>AC Repair</option>
+        <option>Appliance Repair</option>
+        <option>Cleaning</option>
+        <option>Mechanic</option>
+        <option>Welding</option>
+        <option>IT Support</option>
+      </select>
+      <input type="text" id="address" placeholder="Address" required>
+      <input type="date" id="date" required>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+    <p class="success" id="successMsg"></p>
+  </div>
+</div>
+
+<!-- Firebase & JS -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+  // ✅ Your Firebase Config
+  const firebaseConfig = {
+    apiKey: "AIzaSyAlM_2y6CDWFU6vNh33RUMnoGAeY4C-TA0",
+    authDomain: "apnafix-4f216.firebaseapp.com",
+    projectId: "apnafix-4f216",
+    storageBucket: "apnafix-4f216.firebasestorage.app",
+    messagingSenderId: "483172615180",
+    appId: "1:483172615180:web:5ce16e74836bd8368e9a29",
+    measurementId: "G-3PNT7VVY4H"
+  };
+
+  // ✅ Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // ✅ Form Submit Handling
+  const form = document.getElementById("bookingForm");
+  const successMsg = document.getElementById("successMsg");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const number = document.getElementById("number").value;
+    const service = document.getElementById("serviceSelect").value;
+    const address = document.getElementById("address").value;
+    const date = document.getElementById("date").value;
+
+    try {
+      await addDoc(collection(db, "serviceBookings"), {
+        name,
+        number,
+        service,
+        address,
+        date,
+        timestamp: new Date()
+      });
+
+      successMsg.textContent = "✅ Booking submitted successfully!";
+      successMsg.style.color = "green";
+      form.reset();
+
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      successMsg.textContent = "❌ Failed to submit booking!";
+      successMsg.style.color = "red";
+    }
+  });
+</script>
+
+
+
+
+
+
+
+  
+
+
+<script>
+  function openBooking(service){
+    let modal = document.getElementById("bookingModal");
+    modal.style.display="flex";
+
+    // auto-select service if passed
+    if(service){
+      document.getElementById("serviceSelect").value = service;
+    }
+  }
+  function closeBooking(){
+    document.getElementById("bookingModal").style.display="none";
+  }
+  window.onclick=function(e){
+    if(e.target==document.getElementById("bookingModal")) closeBooking();
+  }
+</script>
+
+  
+
+</body>
+</html>
