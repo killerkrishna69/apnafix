@@ -59,53 +59,19 @@
     nav a {color:#fff;margin:0 10px;text-decoration:none;font-weight:bold;}
     nav a:hover {text-decoration:underline;}
       /* Default hamburger hidden */
-.hamburger {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    background: #007BFF;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-  }
-  nav a {
-    display: block;
-    padding: 10px;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
-  nav a:last-child { border-bottom: none; }
-
-  .hamburger {
-    display: block;
-  }
-
-  nav.show {
-    display: flex;
-  }
-} /* Default nav visible */
 nav {
   display: flex;
 }
 
-/* Mobile: only ApnaFix, no nav */
+/* Mobile View */
 @media (max-width: 768px) {
-  nav {
-    display: none 
-  }
-}
 
+
+nav {
+    display: none ;
+  header {
+    justify-content: center; /* center ApnaFix on mobile */
+  }
 
 
     /* Hero Section */
