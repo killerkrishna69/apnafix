@@ -1,19 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://killerkrishna69.github.io/apnafix/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://killerkrishna69.github.io/apnafix/about</loc>
+    <loc>https://killerkrishna69.github.io/apnafix/about.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://killerkrishna69.github.io/apnafix/services</loc>
+    <loc>https://killerkrishna69.github.io/apnafix/services.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://killerkrishna69.github.io/apnafix/booking.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://killerkrishna69.github.io/apnafix/reviews.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://killerkrishna69.github.io/apnafix/projects.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://killerkrishna69.github.io/apnafix/contact.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://killerkrishna69.github.io/apnafix/contact</loc>
-    <priority>0.8</priority>
-  </url>
+
 </urlset>
+
