@@ -516,82 +516,73 @@ footer a {
       <input type="date" id="date" required>
       <button type="submit" class="btn">Submit</button>
     </form>
-    <p class="success" id="successMsg"></p>
+    <p id="response"class="success" id="successMsg"></p>
+    
   </div>
 </div>
 
-<!-- Firebase & JS -->
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
-  // ✅ Your Firebase Config
-  const firebaseConfig = {
-    apiKey: "AIzaSyAlM_2y6CDWFU6vNh33RUMnoGAeY4C-TA0",
-    authDomain: "apnafix-4f216.firebaseapp.com",
-    projectId: "apnafix-4f216",
-    storageBucket: "apnafix-4f216.firebasestorage.app",
-    messagingSenderId: "483172615180",
-    appId: "1:483172615180:web:5ce16e74836bd8368e9a29",
-    measurementId: "G-3PNT7VVY4H"
-  };
-
-  // ✅ Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // ✅ Form Submit Handling
-  const form = document.getElementById("bookingForm");
-  const successMsg = document.getElementById("successMsg");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const number = document.getElementById("number").value;
-    const service = document.getElementById("serviceSelect").value;
-    const address = document.getElementById("address").value;
-    const date = document.getElementById("date").value;
-
-    try {
-      await addDoc(collection(db, "serviceBookings"), {
-        name,
-        number,
-        service,
-        address,
-        date,
-        timestamp: new Date()
-      });
-        
-// Firebase save hone ke baad
-// Firebase save hone ke baad
-await fetch("https://script.google.com/macros/s/AKfycbz_vYNtRwcl6W1qAumOdsCWUybEemglAxrTzcSjVt95V-5y13VPSREd5ykF_KN5MYG7mA/exec", {
-  method: "POST",
-  body: JSON.stringify({
-    name: name,
-    number: number,   // ✅ correct variable
-    service: service,
-    address: address,
-    date: date
-  }),
-  headers: {
-    "Content-Type": "application/json"
-  }
-});
-
-
-      successMsg.textContent = "✅ Booking submitted successfully!";
-      successMsg.style.color = "green";
-      form.reset();
-
-    } catch (error) {
-      console.error("Error adding document: ", error);
-      successMsg.textContent = "❌ Failed to submit booking!";
-      successMsg.style.color = "red";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+  
+    // ✅ Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyAlM_2y6CDWFU6vNh33RUMnoGAeY4C-TA0",
+      authDomain: "apnafix-4f216.firebaseapp.com",
+      projectId: "apnafix-4f216",
+      storageBucket: "apnafix-4f216.firebasestorage.app",
+      messagingSenderId: "483172615180",
+      appId: "1:483172615180:web:5ce16e74836bd8368e9a29",
+      measurementId: "G-3PNT7VVY4H"
+    };
+  
+    // ✅ Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+  
+    // ✅ Function to Save Data
+    async function mySecondFunction() {
+      const form = document.getElementById("bookingForm");
+      const successMsg = document.getElementById("successMsg");
+  
+      const name = document.getElementById("name").value;
+      const number = document.getElementById("number").value;
+      const service = document.getElementById("serviceSelect").value;
+      const address = document.getElementById("address").value;
+      const date = document.getElementById("date").value;
+  
+      try {
+        await addDoc(collection(db, "serviceBookings"), {
+          name,
+          number,
+          service,
+          address,
+          date,
+          timestamp: new Date()
+        });
+  
+        successMsg.textContent = "✅ Booking submitted successfully!";
+        successMsg.style.color = "green";
+        form.reset();
+      } catch (error) {
+        console.error("Error adding document: ", error);
+        successMsg.textContent = "❌ Failed to submit booking!";
+        successMsg.style.color = "red";
+      }
     }
-  });
-    
-</script>
+  
+    // ✅ Form Submit Listener
+    document.getElementById("bookingForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      window.mySecondFunction = mySecondFunction;
+    });
+  </script>
+  
+
+
+ 
+  
+      
 
 
 
@@ -621,31 +612,39 @@ await fetch("https://script.google.com/macros/s/AKfycbz_vYNtRwcl6W1qAumOdsCWUybE
 
 
 
+  
+  const scriptURL = "https://script.google.com/macros/s/AKfycbz_vYNtRwcl6W1qAumOdsCWUybEemglAxrTzcSjVt95V-5y13VPSREd5ykF_KN5MYG7mA/exec";
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbz_vYNtRwcl6W1qAumOdsCWUybEemglAxrTzcSjVt95V-5y13VPSREd5ykF_KN5MYG7mA/exec";
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-    document.getElementById("bookingForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+  const data = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("number").value,
+    service: document.getElementById("serviceSelect").value,
+    message: document.getElementById("address").value
+  };
 
-      const data = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("number").value,
-        service: document.getElementById("serviceSelect").value,
-        message: document.getElementById("address").value
-      };
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.text())
+  .then(msg => {
+    document.getElementById("response").innerText = "✅ Booking submitted successfully!";
 
-      fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(data)
-      })
-      .then(res => res.text())
-      .then(msg => {
-        document.getElementById("response").innerText = "✅ Response: " + msg;
-      })
-      .catch(err => {
-        document.getElementById("response").innerText = "❌ Error: " + err;
-      });
-    });
+    // Yaha dusra function call karo
+    mySecondFunction(); 
+  })
+  .catch(err => {
+    document.getElementById("response").innerText = "❌ Error: " + err;
+  });
+});
+
+// Dusra function
+
+
+  
 </script>
    
 
