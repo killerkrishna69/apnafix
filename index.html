@@ -618,6 +618,34 @@ await fetch("https://script.google.com/macros/s/AKfycbz_vYNtRwcl6W1qAumOdsCWUybE
   window.onclick=function(e){
     if(e.target==document.getElementById("bookingModal")) closeBooking();
   }
+
+
+
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbz_vYNtRwcl6W1qAumOdsCWUybEemglAxrTzcSjVt95V-5y13VPSREd5ykF_KN5MYG7mA/exec";
+
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("number").value,
+        service: document.getElementById("serviceSelect").value,
+        message: document.getElementById("address").value
+      };
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+      .then(res => res.text())
+      .then(msg => {
+        document.getElementById("response").innerText = "✅ Response: " + msg;
+      })
+      .catch(err => {
+        document.getElementById("response").innerText = "❌ Error: " + err;
+      });
+    });
 </script>
    
 
