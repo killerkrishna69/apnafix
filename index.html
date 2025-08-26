@@ -564,19 +564,21 @@ footer a {
       });
         
 // Firebase save hone ke baad
+// Firebase save hone ke baad
 await fetch("https://script.google.com/macros/s/AKfycbz_vYNtRwcl6W1qAumOdsCWUybEemglAxrTzcSjVt95V-5y13VPSREd5ykF_KN5MYG7mA/exec", {
   method: "POST",
   body: JSON.stringify({
     name: name,
-    phone: phone,
+    number: number,   // ✅ correct variable
     service: service,
     address: address,
-      date: date
+    date: date
   }),
   headers: {
     "Content-Type": "application/json"
   }
 });
+
 
       successMsg.textContent = "✅ Booking submitted successfully!";
       successMsg.style.color = "green";
